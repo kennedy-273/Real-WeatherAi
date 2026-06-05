@@ -16,11 +16,28 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
           cache: 'npm'
+
+      - name: Diagnostic - Node / npm versions
+        run: |
+          node --version
+          npm --version
+          node -p "process.versions"
+
+      - name: Diagnostic - Show workspace
+        run: |
+          pwd
+          ls -la
+          echo "node_modules listing (top 50)" && ls -la node_modules | head -n 50 || true
+
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Diagnostic - try importing lovable-tagger
+        run: |
+          node -e "(async()=>{try{const m=await import('lovable-tagger'); console.log('import ok', Object.keys(m).slice(0,10));}catch(e){console.error('import failed', e && e.stack ? e.stack : e); process.exit(0);} })()"
 
       - name: Build
         run: npm run build
