@@ -453,7 +453,6 @@ export function WeatherApp() {
                   </div>
                 </section>
 
-                {/* Daily */}
                 <section className="mt-6 rounded-3xl glass p-6">
                   <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-foreground/70">
                     7-day forecast
@@ -487,7 +486,6 @@ export function WeatherApp() {
                   </ul>
                 </section>
 
-                {/* Extras: sunrise/sunset + precipitation sum */}
                 <section className="mt-6 grid grid-cols-2 gap-4">
                   <div className="rounded-2xl glass p-4 flex items-center gap-3">
                     <Sun className="h-6 w-6 text-accent" />
