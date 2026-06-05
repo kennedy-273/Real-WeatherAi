@@ -5,6 +5,7 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
+    base: "./",
     server: {
       port: 5173,
     },
@@ -12,8 +13,19 @@ export default defineConfig({
       outDir: "dist",
     },
   },
-
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
