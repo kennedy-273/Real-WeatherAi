@@ -1,0 +1,14 @@
+# Netlify configuration: ensures Netlify builds the Vite app from the repository root
+# Fixes issues where the Base directory is set incorrectly in the UI (e.g. "main").
+
+[build]
+  command = "npm run build"
+  # Vite here outputs a client bundle under `dist/client` and server artifacts under `dist/server`.
+  # For Netlify static hosting we should publish the client folder so Netlify can find index.html.
+  publish = "dist/client"
+
+# Optional: a simple redirect for single-page-app routing (uncomment if needed)
+#[[redirects]]
+#  from = "/*"
+#  to = "/index.html"
+#  status = 200
