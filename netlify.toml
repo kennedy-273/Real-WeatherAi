@@ -1,6 +1,6 @@
 # Netlify configuration: ensures Netlify builds the Vite app from the repository root
-# Explicitly set the base to the repository root so Netlify doesn't try to use a non-existent subdirectory
-base = "."
+# (Do not force a "base" directory here; Netlify's Site settings can set a Base directory
+# and a stale value like "main" will cause the build to fail with "Base directory does not exist".)
 
 [build]
   command = "npm run build"
