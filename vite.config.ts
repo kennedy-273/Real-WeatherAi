@@ -5,12 +5,14 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
-    base: "./",
+    base: "/",
     server: {
       port: 5173,
     },
     build: {
       outDir: "dist",
+      minify: "esbuild",
+      sourcemap: false,
     },
   },
 });
