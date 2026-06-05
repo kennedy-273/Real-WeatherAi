@@ -5,12 +5,18 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
+    server: {
+      port: 5173,
+    },
     build: {
       outDir: "dist",
     },
   },
 
 });
+
+
+
 
 
 

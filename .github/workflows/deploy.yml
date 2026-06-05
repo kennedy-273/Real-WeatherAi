@@ -1,0 +1,57 @@
+name: Build and deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Inspect dist output
+        run: |
+          echo "dist listing:" && ls -la dist || true
+
+      - name: Select publish directory
+        id: set_publish_dir
+        run: |
+          if [ -d "dist/client" ]; then
+            echo "PUBLISH_DIR=dist/client" >> $GITHUB_OUTPUT
+            echo "Selected dist/client"
+          elif [ -d "dist" ]; then
+            echo "PUBLISH_DIR=dist" >> $GITHUB_OUTPUT
+            echo "Selected dist"
+          else
+            echo "PUBLISH_DIR=" >> $GITHUB_OUTPUT
+            echo "No dist found"
+          fi
+
+      - name: Deploy to GitHub Pages
+        if: steps.set_publish_dir.outputs.PUBLISH_DIR != ''
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ steps.set_publish_dir.outputs.PUBLISH_DIR }}
+          keep_files: true
+
+      - name: Fail if no build output
+        if: steps.set_publish_dir.outputs.PUBLISH_DIR == ''
+        run: |
+          echo "No build output found in dist or dist/client. Failing workflow." && exit 1
