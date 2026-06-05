@@ -1,0 +1,135 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Deep aurora night base */
+  --background: oklch(0.18 0.05 265);
+  --foreground: oklch(0.98 0.01 250);
+
+  --card: oklch(0.24 0.05 265);
+  --card-foreground: oklch(0.98 0.01 250);
+  --popover: oklch(0.22 0.05 265);
+  --popover-foreground: oklch(0.98 0.01 250);
+
+  --primary: oklch(0.78 0.16 220);
+  --primary-foreground: oklch(0.15 0.04 265);
+
+  --secondary: oklch(0.3 0.04 265);
+  --secondary-foreground: oklch(0.98 0.01 250);
+  --muted: oklch(0.28 0.03 265);
+  --muted-foreground: oklch(0.72 0.03 260);
+  --accent: oklch(0.74 0.18 60);
+  --accent-foreground: oklch(0.15 0.04 265);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 250);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.78 0.16 220);
+
+  /* Glassmorphism surfaces */
+  --surface: oklch(1 0 0 / 8%);
+  --surface-strong: oklch(1 0 0 / 14%);
+
+  /* Mood gradients used as page backgrounds */
+  --mood-clear: linear-gradient(160deg, #1e3a8a 0%, #2563eb 40%, #f59e0b 100%);
+  --mood-partly: linear-gradient(160deg, #1e3a8a 0%, #3b82f6 50%, #93c5fd 100%);
+  --mood-cloudy: linear-gradient(160deg, #1f2937 0%, #475569 60%, #94a3b8 100%);
+  --mood-rain: linear-gradient(160deg, #0f172a 0%, #1e3a8a 50%, #475569 100%);
+  --mood-snow: linear-gradient(160deg, #1e3a8a 0%, #64748b 50%, #e2e8f0 100%);
+  --mood-storm: linear-gradient(160deg, #020617 0%, #1e1b4b 50%, #4338ca 100%);
+  --mood-night: linear-gradient(160deg, #020617 0%, #1e1b4b 50%, #4c1d95 100%);
+}
+
+.dark {
+  /* same palette */
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body {
+    background: var(--background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background-color: var(--surface);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid oklch(1 0 0 / 12%);
+  }
+  .glass-strong {
+    background-color: var(--surface-strong);
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    border: 1px solid oklch(1 0 0 / 16%);
+  }
+
+  .mood-clear   { background: var(--mood-clear); }
+  .mood-partly  { background: var(--mood-partly); }
+  .mood-cloudy  { background: var(--mood-cloudy); }
+  .mood-rain    { background: var(--mood-rain); }
+  .mood-snow    { background: var(--mood-snow); }
+  .mood-storm   { background: var(--mood-storm); }
+  .mood-night   { background: var(--mood-night); }
+
+  .text-balance { text-wrap: balance; }
+
+  /* Subtle slow drift for the page background */
+  .bg-animated {
+    background-size: 200% 200%;
+    animation: drift 24s ease-in-out infinite;
+  }
+  @keyframes drift {
+    0%, 100% { background-position: 0% 30%; }
+    50%      { background-position: 100% 70%; }
+  }
+}
