@@ -1,1 +1,4 @@
-export { default } from '../server'
+import type { ExportedHandler } from '@cloudflare/workers-types'
+import handler from '../server'
+
+export default handler satisfies ExportedHandler
