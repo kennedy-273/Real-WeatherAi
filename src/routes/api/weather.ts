@@ -31,3 +31,4 @@ export const Route = createFileRoute("/api/weather")({
     },
   },
 });
+
