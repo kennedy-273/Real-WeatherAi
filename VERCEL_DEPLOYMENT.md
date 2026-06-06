@@ -11,28 +11,32 @@ This project is configured for deployment on **Vercel**.
 ## Local Setup
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/kennedy-273/Real-WeatherAi.git
    cd weather
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Create `.env.local` with your Weather AI API key:
+
    ```bash
    cp .env.example .env.local
    ```
-   
+
    Then edit `.env.local` and replace the `WEATHER_AI_KEY` value with your actual key.
 
 4. Start development server:
+
    ```bash
    npm run dev
    ```
-   
+
    The app should be available at `http://localhost:5173`
 
 ## Deployment to Vercel
@@ -40,11 +44,13 @@ This project is configured for deployment on **Vercel**.
 ### Using Vercel CLI
 
 1. Install Vercel CLI globally:
+
    ```bash
    npm i -g vercel
    ```
 
 2. Deploy:
+
    ```bash
    vercel
    ```
@@ -74,6 +80,7 @@ This project is configured for deployment on **Vercel**.
 ## Build Process
 
 The build process:
+
 1. Runs `npm run build` which uses Vite + TanStack Start to bundle the app
 2. Runs `npm run postbuild` which organizes the output into `dist/client`
 3. Vercel serves `dist/client` as the static root with proper SPA routing
@@ -116,6 +123,7 @@ If `/api/weather` returns errors:
 ## Support
 
 For issues:
+
 - Weather AI API docs: https://weather-ai.co/docs
 - Vercel docs: https://vercel.com/docs
 - TanStack Start: https://tanstack.com/start

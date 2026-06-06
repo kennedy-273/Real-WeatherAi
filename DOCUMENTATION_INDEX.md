@@ -3,46 +3,54 @@
 ## Quick Links Based on Your Needs
 
 ### 🚀 I Want to Deploy NOW
+
 → Start with **`ACTION_PLAN.md`** (5-step quick guide, 15 min)
 
 ### ✅ I Want Step-by-Step Instructions
+
 → Read **`DEPLOYMENT_CHECKLIST.md`** (checklist format, detailed)
 
 ### 💻 I Need Help with Local Development
+
 → Read **`SETUP.md`** (local dev guide, troubleshooting)
 
 ### 🔧 I Want Technical Details
+
 → Read **`MIGRATION_SUMMARY.md`** (what changed, why, how)
 
 ### 📖 I Want Everything
+
 → Read **`VERCEL_DEPLOYMENT.md`** (complete reference guide)
 
 ### 🔍 I Want to See Config Changes
+
 → Read **`CONFIGURATION_CHANGES.md`** (before/after comparison)
 
 ### 📊 What's the Project Status?
+
 → Read **`PROJECT_STATUS.md`** (current state overview)
 
 ---
 
 ## Document Purposes at a Glance
 
-| Document | Purpose | Best For | Time |
-|----------|---------|----------|------|
-| **ACTION_PLAN.md** | 5-step deployment plan | Getting to Vercel fast | 15 min |
-| **DEPLOYMENT_CHECKLIST.md** | Detailed checklist format | Following step-by-step | 20 min |
-| **SETUP.md** | Local development guide | Setting up locally | 10 min |
-| **VERCEL_DEPLOYMENT.md** | Complete reference | Full understanding | 30 min |
-| **MIGRATION_SUMMARY.md** | Technical deep dive | Understanding changes | 15 min |
-| **CONFIGURATION_CHANGES.md** | Before/after configs | Seeing exact changes | 10 min |
-| **PROJECT_STATUS.md** | Project overview | Quick status check | 5 min |
-| **README.md** | Main project README | Quick start | 5 min |
+| Document                     | Purpose                   | Best For               | Time   |
+| ---------------------------- | ------------------------- | ---------------------- | ------ |
+| **ACTION_PLAN.md**           | 5-step deployment plan    | Getting to Vercel fast | 15 min |
+| **DEPLOYMENT_CHECKLIST.md**  | Detailed checklist format | Following step-by-step | 20 min |
+| **SETUP.md**                 | Local development guide   | Setting up locally     | 10 min |
+| **VERCEL_DEPLOYMENT.md**     | Complete reference        | Full understanding     | 30 min |
+| **MIGRATION_SUMMARY.md**     | Technical deep dive       | Understanding changes  | 15 min |
+| **CONFIGURATION_CHANGES.md** | Before/after configs      | Seeing exact changes   | 10 min |
+| **PROJECT_STATUS.md**        | Project overview          | Quick status check     | 5 min  |
+| **README.md**                | Main project README       | Quick start            | 5 min  |
 
 ---
 
 ## Navigation by Scenario
 
 ### Scenario 1: "I'm Ready to Deploy Now"
+
 ```
 1. Read: ACTION_PLAN.md (5 steps)
 2. Execute: Steps 1-5
@@ -50,6 +58,7 @@
 ```
 
 ### Scenario 2: "I'm New to This Project"
+
 ```
 1. Read: README.md (overview)
 2. Read: SETUP.md (local setup)
@@ -58,6 +67,7 @@
 ```
 
 ### Scenario 3: "Something Went Wrong"
+
 ```
 1. Check: DEPLOYMENT_CHECKLIST.md (troubleshooting)
 2. Or: SETUP.md (if local issue)
@@ -66,6 +76,7 @@
 ```
 
 ### Scenario 4: "I Want to Understand the Changes"
+
 ```
 1. Read: MIGRATION_SUMMARY.md (what changed)
 2. Read: CONFIGURATION_CHANGES.md (before/after)
@@ -73,6 +84,7 @@
 ```
 
 ### Scenario 5: "I'm a DevOps/Tech Lead Reviewing This"
+
 ```
 1. Read: PROJECT_STATUS.md (summary)
 2. Read: MIGRATION_SUMMARY.md (technical details)
@@ -85,6 +97,7 @@
 ## Document Contents
 
 ### 📄 ACTION_PLAN.md
+
 - 5-step deployment plan
 - Time estimates for each step
 - Success indicators
@@ -92,6 +105,7 @@
 - Estimated total time: 15 minutes
 
 ### 📄 DEPLOYMENT_CHECKLIST.md
+
 - Pre-deployment checks
 - Pre-deployment verification
 - Step-by-step deployment
@@ -101,6 +115,7 @@
 - Success indicators
 
 ### 📄 SETUP.md
+
 - Local development setup
 - Build process explanation
 - Deployment methods (3 options)
@@ -110,6 +125,7 @@
 - Environment configuration
 
 ### 📄 VERCEL_DEPLOYMENT.md
+
 - Prerequisites
 - Local setup
 - 3 deployment methods
@@ -119,6 +135,7 @@
 - Support resources
 
 ### 📄 MIGRATION_SUMMARY.md
+
 - What changed and why
 - Root causes fixed
 - Data flow explanation
@@ -128,6 +145,7 @@
 - Removed Netlify-specific config
 
 ### 📄 CONFIGURATION_CHANGES.md
+
 - Detailed before/after for each file
 - Key improvements explained
 - What was NOT changed
@@ -136,6 +154,7 @@
 - Rollback instructions
 
 ### 📄 PROJECT_STATUS.md
+
 - What was done
 - Issues fixed
 - Files modified
@@ -145,6 +164,7 @@
 - Success metrics
 
 ### 📄 README.md
+
 - Project overview
 - Features
 - Stack
@@ -157,6 +177,7 @@
 ## Command Reference
 
 ### Local Development
+
 ```bash
 npm install                    # Install dependencies
 npm run dev                   # Start dev server
@@ -165,12 +186,14 @@ npm run format                # Format code
 ```
 
 ### Production Testing
+
 ```bash
 npm run build                 # Build for production
 npm run preview               # Preview production build
 ```
 
 ### Git & Deployment
+
 ```bash
 git add .                     # Stage changes
 git commit -m "msg"           # Commit
@@ -213,17 +236,17 @@ git push origin main          # Push to GitHub
 
 ## Which Document to Read?
 
-| I need to... | Read this |
-|--------------|-----------|
-| Deploy ASAP | ACTION_PLAN.md |
-| Follow steps carefully | DEPLOYMENT_CHECKLIST.md |
-| Set up locally | SETUP.md |
-| Understand everything | VERCEL_DEPLOYMENT.md |
-| Understand the changes | MIGRATION_SUMMARY.md |
+| I need to...             | Read this                |
+| ------------------------ | ------------------------ |
+| Deploy ASAP              | ACTION_PLAN.md           |
+| Follow steps carefully   | DEPLOYMENT_CHECKLIST.md  |
+| Set up locally           | SETUP.md                 |
+| Understand everything    | VERCEL_DEPLOYMENT.md     |
+| Understand the changes   | MIGRATION_SUMMARY.md     |
 | See exact config changes | CONFIGURATION_CHANGES.md |
-| Check project status | PROJECT_STATUS.md |
-| Get quick commands | QUICK_REFERENCE.sh |
-| Quick project overview | README.md |
+| Check project status     | PROJECT_STATUS.md        |
+| Get quick commands       | QUICK_REFERENCE.sh       |
+| Quick project overview   | README.md                |
 
 ---
 
@@ -278,6 +301,7 @@ Is it about configuration?
 ## File Locations
 
 All documentation is in the project root:
+
 ```
 /home/kennedy/Downloads/weather/ACTION_PLAN.md
 /home/kennedy/Downloads/weather/DEPLOYMENT_CHECKLIST.md
@@ -316,6 +340,7 @@ All documentation is in the project root:
 ## Stay Updated
 
 After deployment:
+
 - Monitor Vercel dashboard for errors
 - Check your live URL regularly
 - Read Vercel logs for any issues

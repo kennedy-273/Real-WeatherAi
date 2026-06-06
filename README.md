@@ -35,11 +35,12 @@ Get a free API key from [weather-ai.co](https://weather-ai.co)
 
 ## Deploy to Vercel ✅
 
-This project is configured for **Vercel deployment**. 
+This project is configured for **Vercel deployment**.
 
 ### Quick Deploy (2 minutes)
 
 1. Push to GitHub:
+
    ```bash
    git add .
    git commit -m "Deploy to Vercel"
@@ -71,4 +72,3 @@ npm run preview      # Preview the build
 ```
 
 Visit `http://localhost:5173` to verify everything works.
-

@@ -5,6 +5,7 @@
 Your project has been fully configured for **Vercel deployment**. Here's what was done:
 
 ### 1. **Vercel Configuration** (`vercel.json`)
+
 - ✅ Updated to use modern Vercel v2 configuration
 - ✅ Added proper build command: `npm run build`
 - ✅ Set output directory: `dist/client`
@@ -13,16 +14,19 @@ Your project has been fully configured for **Vercel deployment**. Here's what wa
 - ✅ Added cache control headers for performance optimization
 
 ### 2. **Vite Configuration** (`vite.config.ts`)
+
 - ✅ Changed base from `./` to `/` for proper absolute paths
 - ✅ Updated minification to use `esbuild` (more reliable than terser)
 - ✅ Disabled sourcemaps for production (smaller bundle)
 
 ### 3. **Environment Setup**
+
 - ✅ Created `.env.example` - template for environment variables
 - ✅ Created `.env.local` - local development environment file
 - ✅ Created `.vercelignore` - files to ignore during deployment
 
 ### 4. **Documentation**
+
 - ✅ Created `VERCEL_DEPLOYMENT.md` - complete deployment guide
 - ✅ Created `SETUP.md` - this quick reference guide
 
@@ -41,6 +45,7 @@ The app will be available at `http://localhost:5173` and will automatically load
 ## Deployment to Vercel - 3 Easy Steps
 
 ### Option A: Using GitHub (Recommended)
+
 1. Push your code to GitHub
 2. Go to https://vercel.com/new
 3. Import your repository
@@ -49,12 +54,14 @@ The app will be available at `http://localhost:5173` and will automatically load
 6. Click Deploy ✅
 
 ### Option B: Using Vercel CLI
+
 ```bash
 npm i -g vercel          # Install CLI globally
 vercel                   # Deploy (follow prompts)
 ```
 
 ### Option C: Using Vercel Dashboard
+
 1. Go to https://vercel.com/dashboard
 2. Click "Add New Project"
 3. Import repository or connect Git
@@ -65,11 +72,12 @@ vercel                   # Deploy (follow prompts)
 
 You need to set one environment variable in Vercel:
 
-| Variable | Value | Source |
-|----------|-------|--------|
+| Variable         | Value                   | Source                |
+| ---------------- | ----------------------- | --------------------- |
 | `WEATHER_AI_KEY` | Your Weather AI API key | https://weather-ai.co |
 
 **To add in Vercel Dashboard:**
+
 - Project Settings → Environment Variables
 - Add `WEATHER_AI_KEY` with your API key
 - Redeploy project
@@ -104,11 +112,9 @@ When you deploy to Vercel, this happens automatically:
    - Bundles React components
    - Compiles TypeScript
    - Bundles CSS and assets
-   
 2. **`npm run postbuild`** - Organizes output
    - Creates `dist/client/index.html`
    - Copies all assets to correct location
-   
 3. **Vercel serves** `dist/client` as the static root
    - SPA routing handled by vercel.json rewrites
    - `/api/weather` requests proxied to server
@@ -130,6 +136,7 @@ If the preview works at http://localhost:5173 and shows weather data, it will wo
 ### Problem: Blank Page After Deployment
 
 **Solution:**
+
 1. Check browser console (DevTools) for errors
 2. Verify `WEATHER_AI_KEY` is set in Vercel dashboard
 3. Check Vercel deployment logs for build errors
@@ -138,6 +145,7 @@ If the preview works at http://localhost:5173 and shows weather data, it will wo
 ### Problem: Weather Data Not Loading
 
 **Check these:**
+
 - [ ] Is `WEATHER_AI_KEY` environment variable set in Vercel?
 - [ ] Are API calls showing in browser Network tab?
 - [ ] Check `/api/weather` request status in DevTools
@@ -146,24 +154,26 @@ If the preview works at http://localhost:5173 and shows weather data, it will wo
 ### Problem: Build Fails
 
 **Check:**
+
 - [ ] All dependencies installed locally: `npm install`
 - [ ] Node version compatible (18+): `node --version`
 - [ ] No TypeScript errors: `npm run lint`
 
 ## Key Files Explained
 
-| File | Purpose |
-|------|---------|
-| `vercel.json` | Tells Vercel how to build and deploy |
-| `vite.config.ts` | Configures Vite bundler settings |
-| `package.json` | Lists dependencies and build scripts |
-| `src/routes/api/weather.ts` | Backend that proxies Weather AI API |
-| `.env.local` | Local development secrets (not committed) |
-| `.vercelignore` | Tells Vercel what to skip during deployment |
+| File                        | Purpose                                     |
+| --------------------------- | ------------------------------------------- |
+| `vercel.json`               | Tells Vercel how to build and deploy        |
+| `vite.config.ts`            | Configures Vite bundler settings            |
+| `package.json`              | Lists dependencies and build scripts        |
+| `src/routes/api/weather.ts` | Backend that proxies Weather AI API         |
+| `.env.local`                | Local development secrets (not committed)   |
+| `.vercelignore`             | Tells Vercel what to skip during deployment |
 
 ## Performance & Caching
 
 The vercel.json includes optimized caching headers:
+
 - **index.html**: No cache (always fresh) - `max-age=0`
 - **Assets (JS/CSS)**: Cached forever - `max-age=31536000`
 
@@ -173,7 +183,7 @@ This means users get fresh content but assets load super fast.
 
 1. **Add your Weather AI API key** to `.env.local` for local testing
 2. **Test locally**: `npm run dev`
-3. **Build locally**: `npm run build` 
+3. **Build locally**: `npm run build`
 4. **Deploy to Vercel**: Push to GitHub → Vercel auto-deploys
 5. **Monitor**: Check Vercel analytics and logs
 
@@ -189,6 +199,7 @@ This means users get fresh content but assets load super fast.
 **Status**: ✅ Ready for Vercel deployment!
 
 Your project is now fully configured. The blank page issue should be resolved once you:
+
 1. Ensure `WEATHER_AI_KEY` is set in Vercel environment variables
 2. Rebuild and deploy
 

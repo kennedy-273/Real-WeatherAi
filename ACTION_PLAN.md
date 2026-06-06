@@ -5,6 +5,7 @@
 Your WeatherAI project is **fully configured for Vercel** and ready to deploy!
 
 ### What's Fixed:
+
 - ✅ Build configuration (Vite)
 - ✅ Asset paths (Base path)
 - ✅ Vercel configuration
@@ -24,6 +25,7 @@ npm run build
 ```
 
 **Expected output:**
+
 ```
 ✓ 1905 modules transformed.
 vite v7.3.5 building for production...
@@ -45,6 +47,7 @@ npm run preview
 Then visit `http://localhost:5173` in your browser.
 
 **Check these:**
+
 - [ ] Page loads (not blank)
 - [ ] Weather data shows for Nairobi
 - [ ] Search works
@@ -66,6 +69,7 @@ git push origin main
 ```
 
 **Verify:**
+
 - [ ] Changes show on GitHub repo
 - [ ] All files are there (check vercel.json, .env.local, etc.)
 
@@ -81,6 +85,7 @@ git push origin main
 4. Click **"Import"**
 
 **Vercel will:**
+
 - Auto-detect build settings (should be correct)
 - Build your project
 - Show deployment progress
@@ -107,6 +112,7 @@ git push origin main
 5. Click **"Save"**
 
 **Then:**
+
 1. Go back to Deployments
 2. Find your latest deployment
 3. Click the **"..."** menu
@@ -134,12 +140,14 @@ Once the redeployment succeeds:
 ## Quick Reference for Each Step
 
 ### Step 1-2: Local Testing
+
 ```bash
 npm run build && npm run preview
 # Visit http://localhost:5173
 ```
 
 ### Step 3: Git Push
+
 ```bash
 git add .
 git commit -m "Configure for Vercel deployment"
@@ -147,6 +155,7 @@ git push origin main
 ```
 
 ### Step 4-5: Vercel Deployment
+
 - Go to vercel.com/new
 - Import GitHub repo
 - Add WEATHER_AI_KEY environment variable
@@ -170,19 +179,25 @@ git push origin main
 ## If Something Goes Wrong
 
 ### Problem: Build fails locally
+
 ```
 [vite:terser] terser not found
 ```
+
 **Solution:** The vite.config.ts wasn't updated properly. Check that `minify: "esbuild"` is set.
 
 ### Problem: Blank page after Vercel deployment
+
 **Solution:** Follow "Post-Deployment Verification" in `DEPLOYMENT_CHECKLIST.md`
 
 ### Problem: "Weather AI API key is required"
+
 **Solution:** Make sure `WEATHER_AI_KEY` environment variable is set in Vercel and the project was redeployed.
 
 ### Problem: Can't find DEPLOYMENT_CHECKLIST
+
 **Solution:** All guides are in the project root. Look for:
+
 - `DEPLOYMENT_CHECKLIST.md` - Step-by-step
 - `SETUP.md` - Detailed setup
 - `VERCEL_DEPLOYMENT.md` - Complete reference
@@ -236,6 +251,7 @@ You'll know it's working when:
 ## Your Live URL (after deployment)
 
 It will be something like:
+
 - `https://real-weather-ai.vercel.app`
 - Or your custom domain if you set one up
 
@@ -253,6 +269,7 @@ It will be something like:
 ## That's It! 🎉
 
 You now have everything you need to:
+
 1. ✅ Develop locally
 2. ✅ Test production build
 3. ✅ Deploy to Vercel
