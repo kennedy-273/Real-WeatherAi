@@ -1,3 +1,5 @@
-import handler from "./src/server";
+import handler from '../server'
 
-export default handler;
+export default {
+  fetch: handler.fetch.bind(handler)
+}
