@@ -4,6 +4,10 @@
   "outputDirectory": "dist/client",
   "rewrites": [
     {
+      "source": "/api/(.*)",
+      "destination": "/api/weather"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
