@@ -42,9 +42,11 @@
 ## What to Check Now
 
 ### 1. Visit Your App
+
 👉 Open: https://real-weather-ai.vercel.app/
 
 ### 2. You Should See
+
 - ✅ Weather data for Nairobi
 - ✅ Current temperature
 - ✅ Weather condition
@@ -52,15 +54,19 @@
 - ✅ Can switch cities
 
 ### 3. If Still Blank
+
 Open DevTools (F12) and check:
+
 - **Console Tab**: Look for error messages
-- **Network Tab**: 
+- **Network Tab**:
   - Look for `/api/weather` request
   - Should show Status: 200
   - Should show JSON data in Response
 
 ### 4. API Function Verification
+
 Your `/api/weather` function is:
+
 - ✅ Deployed on Vercel
 - ✅ Running Node.js 24.x
 - ✅ Size: 4.4 kB
@@ -70,12 +76,14 @@ Your `/api/weather` function is:
 ## Files Deployed
 
 **Static Files** (from `/dist/client/`):
+
 - `index.html` - Your React app entry point
 - `index-BfP-zQAj.js` - React bundle (17 kB)
 - `index-BIWb-6mW.js` - Main app bundle (349 kB)
 - `styles-CLCACrZe.css` - Tailwind styles (79 kB)
 
 **Serverless Function** (from `/api/`):
+
 - `weather.ts` → compiled to `/api/weather` function
 - Handles: `GET /api/weather?lat=X&lon=Y`
 - Returns: JSON weather data
@@ -83,6 +91,7 @@ Your `/api/weather` function is:
 ## The Fix That Worked
 
 The `vercel.json` now correctly:
+
 ```json
 {
   "rewrites": [
@@ -99,6 +108,7 @@ The `vercel.json` now correctly:
 ```
 
 This tells Vercel:
+
 - ✅ Route `/api/*` to the weather function
 - ✅ Route everything else to React
 
@@ -116,16 +126,19 @@ This tells Vercel:
 ## Troubleshooting If It's Still Blank
 
 ### Step 1: Hard Refresh
+
 - Press `Ctrl+Shift+R` (or `Cmd+Shift+R` on Mac)
 - This clears browser cache
 
 ### Step 2: Check Console
+
 - Press `F12`
 - Go to Console tab
 - Look for red error messages
 - Screenshot and let me know
 
 ### Step 3: Check Network
+
 - Press `F12`
 - Go to Network tab
 - Refresh the page
@@ -134,19 +147,20 @@ This tells Vercel:
 - Check Response tab for JSON data
 
 ### Step 4: Verify API Key
+
 - Vercel Dashboard → Project Settings
 - Check that `WEATHER_AI_KEY` is set
 - If not, add it and redeploy
 
 ## Status Check
 
-| Component | Status |
-|-----------|--------|
-| Build | ✅ Completed |
-| Static Files | ✅ Deployed |
-| API Function | ✅ Deployed |
-| Configuration | ✅ Correct |
-| Ready | ✅ YES |
+| Component     | Status       |
+| ------------- | ------------ |
+| Build         | ✅ Completed |
+| Static Files  | ✅ Deployed  |
+| API Function  | ✅ Deployed  |
+| Configuration | ✅ Correct   |
+| Ready         | ✅ YES       |
 
 ## Final Checklist
 
