@@ -1,4 +1,16 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { IncomingMessage } from "http";
+
+interface VercelRequest extends IncomingMessage {
+  query: Record<string, string | string[]>;
+  body?: Record<string, unknown>;
+}
+
+interface VercelResponse {
+  status: (code: number) => VercelResponse;
+  setHeader: (name: string, value: string) => VercelResponse;
+  json: (body: Record<string, unknown>) => void;
+  end: () => void;
+}
 
 const API_KEY =
   process.env.WEATHER_AI_KEY ?? "wai_7bf0d5.2c22cb06ff75600ce30fd203b86d52947e4c6f731e3abab4";
