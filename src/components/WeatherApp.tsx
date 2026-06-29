@@ -18,7 +18,26 @@ import {
   Sparkles,
   Thermometer,
   Star,
+  Cloud,
+  CloudSun,
+  CloudRain,
+  CloudFog,
+  CloudLightning,
+  Snowflake,
+  Moon,
 } from "lucide-react";
+
+function WmoIcon({ code, isNight, className }: { code: number | string; isNight: boolean; className?: string }) {
+  const c = Number(code);
+  if (c >= 95) return <CloudLightning className={className} />;  
+  if (c >= 71 && c <= 77) return <Snowflake className={className} />;  
+  if ((c >= 51 && c <= 67) || (c >= 80 && c <= 82)) return <CloudRain className={className} />;  
+  if (c === 45 || c === 48) return <CloudFog className={className} />;  
+  if (c === 3) return <Cloud className={className} />;  
+  if (c === 2) return <CloudSun className={className} />;  
+  if (isNight) return <Moon className={className} />;  
+  return <Sun className={className} />;
+}
 
 const DEFAULT_CITY: GeoResult = {
   id: 1,
@@ -355,7 +374,7 @@ export function WeatherApp() {
                     </div>
                     <div className="mt-6 flex flex-wrap items-end gap-8">
                       <div className="flex items-center gap-4">
-                        <img src={data.current.icon} alt="" className="h-24 w-24 drop-shadow-2xl" />
+                        <WmoIcon code={data.current.weather_code} isNight={false} className="h-24 w-24" />
                         <div>
                           <div className="font-display text-7xl font-light leading-none tracking-tight sm:text-8xl">
                             {Math.round(data.current.temperature)}
@@ -440,7 +459,7 @@ export function WeatherApp() {
                         <div className="text-xs text-foreground/70">
                           {new Date(h.time).toLocaleTimeString(undefined, { hour: "numeric" })}
                         </div>
-                        <img src={h.icon} alt="" className="my-2 h-10 w-10" />
+                        <WmoIcon code={h.weather_code} isNight={false} className="h-10 w-10" />
                         <div className="text-base font-medium">
                           {Math.round(h.temperature)}
                           {tempUnit}
@@ -471,7 +490,7 @@ export function WeatherApp() {
                               ? "Today"
                               : new Date(d.date).toLocaleDateString(undefined, { weekday: "long" })}
                           </span>
-                          <img src={d.icon} alt="" className="h-10 w-10" />
+                          <WmoIcon code={d.weather_code_max} isNight={false} className="h-10 w-10" />
                           <span className="text-foreground/70">
                             {conditionLabel(d.condition_code)}
                           </span>
@@ -562,3 +581,5 @@ function hourlySlice(data: WeatherResponse) {
   const future = data.hourly.filter((h) => new Date(h.time).getTime() >= now - 60 * 60 * 1000);
   return (future.length ? future : data.hourly).slice(0, 24);
 }
+
+// ── Weather code → lucide icon (appended patch) ──────────────────────────────
